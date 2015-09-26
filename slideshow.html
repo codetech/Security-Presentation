@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SSH and GPG</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      .inverse {background-color:#333;color: white;}
+      .bggreen {background-color:#5CB78D;color:#333;}
+      .bgblue {background-color:#5cb4b7;color:#333;}
+      .gray {color: #aaa}
+      .orange {color: #EE7600}
+      .small {font-size: .75em}
+      .remark-inline-code{background-color:#eee;color:black;padding:5px;}
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+    </textarea>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                url : "./slides.md",
+                dataType: "text",
+                success : function (data) {
+                    $("#source").text(data);
+                    var slideshow = remark.create();
+                }
+            });
+        });
+    </script>
+  </body>
+</html>
