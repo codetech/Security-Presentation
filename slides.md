@@ -1,5 +1,5 @@
 class: center, middle, bgblue
-#Code Tech Security Talk
+#SSH and Networking
 
 **By Jonathan Jimenez**
 
@@ -23,11 +23,12 @@ Shells are text based but the good ones have colors and clickable links, as well
 --
 
 For example, if you want to open a browser to google.com you would enter
-```bash
-	open https://www.google.com //on OSX
-	start https://www.google.com //on Windows
-	xdg-open https://www.google.com //on Linux
-```
+
+`open https://www.google.com` on OSX
+
+`start https://www.google.com` on Windows
+
+`xdg-open https://www.google.com` on Linux
 
 --
 Popular Shells
@@ -110,15 +111,13 @@ class: center, middle, inverse
 #PGP
 >Wikipedia:
 
->Pretty Good Privacy (PGP) is a data encryption and decryption computer program that provides cryptographic privacy and authentication for data communication. PGP is often used for signing, encrypting, and decrypting texts, e-mails, files, directories, and whole disk partitions and to increase the security of e-mail communications. It was created by Phil Zimmermann in 1991.
-
->PGP and similar software follow the OpenPGP standard (RFC 4880) for encrypting and decrypting data.
+>Pretty Good Privacy (PGP) is a data encryption and decryption computer program that provides cryptographic privacy and authentication for data communication.
 ---
 
 #GPG
 >Wikipedia:
 
->GNU Privacy Guard (GnuPG or GPG) is a free software replacement for the Symantec's PGP cryptographic software suite. GnuPG is compliant with RFC 4880, which is the IETF standards track specification of OpenPGP. Modern versions of PGP and Veridis' Filecrypt are interoperable with GnuPG and other OpenPGP-compliant systems.
+>GNU Privacy Guard (GnuPG or GPG) is a free software replacement for the Symantec's PGP cryptographic software suite.
 
 --
 
@@ -126,7 +125,20 @@ class: center, middle, inverse
 ---
 
 #RSA
->RSA is one of the first practical public-key cryptosystems and is widely used for secure data transmission. In such a cryptosystem, the encryption key is public and differs from the decryption key which is kept secret. In RSA, this asymmetry is based on the practical difficulty of factoring the product of two large prime numbers, the factoring problem. RSA is made of the initial letters of the surnames of Ron Rivest, Adi Shamir, and Leonard Adleman, who first publicly described the algorithm in 1977. Clifford Cocks, an English mathematician, had developed an equivalent system in 1973, but it was not declassified until 1997.
+
+- **Cryptosystem** - Other encryption methods are built on top of RSA
+
+--
+
+- **Asymetrical** - You don't use the same key to encrypt and decrypt.
+
+--
+
+- Developed in 1973 by Ron **R**ivest, Adi **S**hamir, and Leonard **A**dleman
+
+--
+
+- Based on difficulty of factoring large numbers
 ---
 
 class: center, middle
