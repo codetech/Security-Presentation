@@ -74,7 +74,7 @@ Things to know, it's (really) simple, but  also (really) insecure.
 
 --
 
-.orange[this is usefull]
+.orange[this is useful]
 ```bash
   telnet rainmaker.wunderground.com
 ```
@@ -88,7 +88,7 @@ Things to know, it's (really) simple, but  also (really) insecure.
 ---
 #Secure Shell (SSH)
 
-An application level protocal for using Shells securily and remotely
+An application level protocol for using Shells securely and remotely
 
 >Wikipedia:
 
@@ -144,7 +144,7 @@ class: center, middle
 
 --
 
-.orange[lets see what we have]
+.orange[let's see what we have]
 ```bash
   cat statement.sig
 ```
@@ -216,11 +216,11 @@ V�J
 
 So we can verify that the file was signed by me, but it's hard to work with.
 
-This would ok is we were signing a large file, but it just doesn't make sense for text.
+This would be ok if we were signing a large file, but it just doesn't make sense for text.
 
 ---
 
-.orange[Lets try]
+.orange[Let's try]
 ```bash
   rm statement.txt.gpg
   gpg --clearsign statement.txt
@@ -263,7 +263,7 @@ This would ok is we were signing a large file, but it just doesn't make sense fo
 
 ---
 
-.orange[But what good is this? Let's try to chang the statement.]
+.orange[But what good is this? Let's try to change the statement.]
 ```bash
   nano statement.txt.asc
 ```
@@ -341,7 +341,7 @@ class: center, middle, bggreen
 
 USB/NFC device to store gpg key
 
-Also has other tools related to loging into services.
+Also has other tools related to logging into services.
 
 
 
