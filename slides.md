@@ -22,7 +22,7 @@ And in detail
 class: center, middle
 #Citizen Four
 ???
-At this point we play a short clip from the citezen four movie talking about keys, and somebody uses rsync
+At this point we play a short clip from the citizen four movie talking about keys, and somebody uses rsync
 ---
 
 class: center, middle, inverse
@@ -30,7 +30,7 @@ class: center, middle, inverse
 ---
 
 class: center, middle
-![something](1.png)
+![something](img/1.png)
 ???
 ```
   +-------+                                  +-------+
@@ -41,7 +41,7 @@ class: center, middle
 ```
 ---
 class: center, middle
-![something](2.png)
+![something](img/2.png)
 ???
 ```
   +-------+                                  +-------+
@@ -52,7 +52,7 @@ class: center, middle
 ```
 ---
 class: center, middle
-![something](3.png)
+![something](img/3.png)
 ???
 ```
   +-----------------+
@@ -70,7 +70,7 @@ class: center, middle
 ```
 ---
 class: center, middle
-![something](4.png)
+![something](img/4.png)
 ???
 ```
   +-----------------+
@@ -88,7 +88,7 @@ class: center, middle
 ```
 ---
 class: center, middle
-![something](5.png)
+![something](img/5.png)
 ???
 ```
   +-----------------+                  +-----------------+
@@ -106,7 +106,7 @@ class: center, middle
 ```
 ---
 class: center, middle
-![something](6.png)
+![something](img/6.png)
 ???
 ```
   +-----------------+                  +-----------------+
@@ -123,7 +123,7 @@ class: center, middle
 ```
 ---
 class: center, middle
-![something](7.png)
+![something](img/7.png)
 ???
 ```
   +-----------------+                  +-----------------+
@@ -149,7 +149,7 @@ class: center, middle
 ```
 ---
 class: center, middle
-![something](8.png)
+![something](img/8.png)
 ???
 ```
   +----------------------+         +---------------------+
@@ -164,7 +164,7 @@ class: center, middle
 ```
 ---
 class: center, middle
-![something](9.png)
+![something](img/9.png)
 ???
 ```
   +----------------------+         +---------------------+
@@ -184,7 +184,7 @@ class: center, middle
 ```
 ---
 class: center, middle
-![something](10.png)
+![something](img/10.png)
 ???
 ```
   +------------------------------------------------------+
@@ -199,7 +199,7 @@ class: center, middle
 ```
 ---
 class: center, middle
-![something](11.png)
+![something](img/11.png)
 ???
 ```
   +------------------------------------------------------+
@@ -224,7 +224,7 @@ class: center, middle
 ```
 ---
 class: center, middle
-![something](12.png)
+![something](img/12.png)
 ???
 ```
   +------------------------------------------------------+
@@ -248,7 +248,7 @@ class: center, middle
 ```
 ---
 class: center, middle
-![something](13.png)
+![something](img/13.png)
 ???
 ```
   +------------------------------------------------------+
@@ -282,7 +282,7 @@ class: center, middle
 ```
 ---
 class: center, middle
-![something](14.png)
+![something](img/14.png)
 ???
 ```
   +----------------------+         +---------------------+
@@ -297,7 +297,7 @@ class: center, middle
 ```
 ---
 class: center, middle
-![something](15.png)
+![something](img/15.png)
 ???
 ```
   +----------------------+         +---------------------+
@@ -311,7 +311,7 @@ class: center, middle
 ```
 ---
 class: center, middle
-![something](16.png)
+![something](img/16.png)
 ???
 ```
   +----------------------+         +---------------------+
@@ -326,7 +326,7 @@ class: center, middle
 ```
 ---
 class: center, middle
-![something](17.png)
+![something](img/17.png)
 ???
 ```
   +----------------------+         +---------------------+
@@ -346,7 +346,7 @@ class: center, middle
 ```
 ---
 class: center, middle
-![something](18.png)
+![something](img/18.png)
 ???
 ```
   +------------------------------------------------------+
@@ -361,7 +361,7 @@ class: center, middle
 ```
 ---
 class: center, middle
-![something](19.png)
+![something](img/19.png)
 ???
 ```
 +------------------------------------------------------+
@@ -386,7 +386,7 @@ class: center, middle
 ```
 ---
 class: center, middle
-![something](20.png)
+![something](img/20.png)
 ???
 ```
   +------------------------------------------------------+
@@ -411,7 +411,7 @@ class: center, middle
 ---
 
 class: center, middle
-![something](21.png)
+![something](img/21.png)
 ???
 ```
   +------------------------------------------------------+
@@ -444,6 +444,129 @@ class: center, middle
   +------------------------------------------------------+
 ```
 ---
+
+class: center, middle
+![something](img/22.png)
+???
+```bash
+  +---------------------------------+
+  |                                 |
+  | +-------+ a--------+ a--------+ |
+  | |       | |        | |        | |
+  | | Alice | |Private | | Public | |
+  | |       | |        | |        | |
+  | +-------+ +--------+ +--------+ |
+  |                                 |
+  +---------------------------------+
+
+
+  +---------------------------------+
+  |                                 |
+  | +-------+ b--------+ b--------+ |
+  | |       | |        | |        | |
+  | | Bob   | |Private | | Public | |
+  | |       | |        | |        | |
+  | +-------+ +--------+ +--------+ |
+  |                                 |
+  +---------------------------------+
+```
+---
+
+class: center, middle
+![something](img/23.png)
+???
+```bash
+  +---------------------------------+
+  |                                 |
+  | +-------+ a--------+ a--------+ |
+  | |       | |        | |        | |
+  | | Alice | |Private | | Public | |
+  | |       | |        | |        | |
+  | +-------+ +--------+ +---+----+ |
+  |                          |      |
+  +--------------------------+------+
+                             |  ^
+                             v  |
+  +-----------------------------+---+
+  |                             |   |
+  | +-------+ b--------+ b------+-+ |
+  | |       | |        | |        | |
+  | | Bob   | |Private | | Public | |
+  | |       | |        | |        | |
+  | +-------+ +--------+ +--------+ |
+  |                                 |
+  +---------------------------------+
+```
+---
+
+class: center, middle
+![something](img/24.png)
+???
+```bash
+  +---------------------------------+
+  |                                 |
+  | +-------+ a--------+ b--------+ |
+  | |       | |        | |        | |
+  | | Alice | |Private | | Public | |
+  | |       | |        | |        | |
+  | +-------+ +--------+ +--------+ |
+  |                                 |
+  +---------------------------------+
+
+
+  +---------------------------------+
+  |                                 |
+  | +-------+ b--------+ a--------+ |
+  | |       | |        | |        | |
+  | | Bob   | |Private | | Public | |
+  | |       | |        | |        | |
+  | +-------+ +--------+ +--------+ |
+  |                                 |
+  +---------------------------------+
+```
+---
+
+class: center, middle
+![something](img/25.png)
+???
+```bash
+  +-----------------------------------------------+
+  |                                               |
+  | +-------+             b--------+              |
+  | |       |+-------+    |        |    +-------+ |
+  | | Alice ||Secret | -> | Public | -> |Frperg | |
+  | |       |+-------+    |        |    +-------+ |
+  | +-------+             +--------+              |
+  |                                               |
+  +-----------------------------------------------+
+```
+---
+
+class: center, middle
+![something](img/26.png)
+???
+```bash
+  +-----------------------------------------------+
+  |                                               |
+  | +-------+             b--------+              |
+  | |       |+-------+    |        |    +-------+ |
+  | | Alice ||Secret | -> | Public | -> |Frperg | |
+  | |       |+-------+    |        |    +-------+ |
+  | +-------+             +--------+        |     |
+  |                                         |     |
+  +-----------------------------------------+-----+
+                                            |
+  +-----------------------------------------+-----+
+  |                                         |     |
+  | +-------+             b--------+        v     |
+  | |       |+-------+    |        |    +-------+ |
+  | | Bob   ||Secret | <- |Private | <- |Frperg | |
+  | |       |+-------+    |        |    +-------+ |
+  | +-------+             +--------+              |
+  |                                               |
+  +-----------------------------------------------+
+```
+---
 #RSA
 
 - **Cryptosystem** - Other encryption methods are built on top of RSA
@@ -459,6 +582,10 @@ class: center, middle
 --
 
 - Based on difficulty of factoring large numbers
+
+--
+
+- RSA key is used to encrypt using encryption algarithm. `aes128-ctr`
 ---
 
 class: center, middle, inverse
