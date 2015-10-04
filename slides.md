@@ -864,14 +864,14 @@ Let's see what we've done.
 ---
 
 #Uploading Key
-Now we need to get out **public** key onto the server
+Now we need to get our **public** key onto the server
 
 .small[.gray[Remember the private key should never be sent out]]
 
 --
 
 We will use scp, specificly winscp, this should be installed already. Open it now.
-???
+
 - The rest should be done in the gui.
 - We need to make a folder called .ssh
 - Copy over the public key
@@ -1084,34 +1084,33 @@ This would be ok if we were signing a large file, but it just doesn't make sense
 
 We will use
 
-`hkp://pool.sks-keyservers.net`
-
---
-
-other options
-
 `https://pgp.mit.edu`
+
+Other Options:
 
 `hkp://certserver.pgp.com`
 
---
+`hkp://pool.sks-keyservers.com`
 
-But in cases like this using the most popular one is best
+Search for keys using:
 
---
-
-After uploading, you can go to [sks-keyservers.net/i/](https://sks-keyservers.net/i/) and search peoples IDs
+`openpgp.us`
 
 --
 
-Notice your keys will be distributed to servers around the world shortly after.
+Most keyservers will update all other keyserver anyways
 
 
 ---
 
 class: center, middle, bggreen
-#0xac8594653b4ad5ef
-`Jonathan Jimenez <jonathanjimenezromo@gmail.com>`
+My Key's FingerPrint
+
+`59BA ECA5 7132 A0E6 FE2D  72DC B828 7A13 131D 1CA5`
+
+So you can find my key using `0x131D1CA5` or my UID
+
+`Jonathan Jimenez <jonathan@jonjmz.com>`
 
 ---
 #Yubikey
@@ -1119,6 +1118,10 @@ class: center, middle, bggreen
 USB/NFC device to store gpg key
 
 Also has other tools related to logging into services.
+
+Alows you to decrypt and sign messages without your keys leaving the yubikey
+
+![some](http://pcsclite.alioth.debian.org/ccid/img/yubikey_neo.png)
 
 
 
