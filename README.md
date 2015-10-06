@@ -13,7 +13,7 @@ slidewhow.html includes the remarkjs file, and loads the slides.md file into the
   Please place images in the img folder.
 
 ## Notes
-- Style goes directly into the slidewhoe.html file
+- Style goes directly into the slideshow.html file
 - To view presentation notes open presentation and click `p`, notice
 - To create a linked presentation (controlled together) press `c`
 - So to present press `c` then `p` and project the normal window
