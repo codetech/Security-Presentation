@@ -1,7 +1,7 @@
 class: center, middle, bgblue
 #SSH and Networking
 
-By **Jonathan Jimenez** andd **Matthew Hendricks**
+By **Jonathan Jimenez** and **Matthew Hendricks**
 
 Slides are available on the codetech github
 ???
