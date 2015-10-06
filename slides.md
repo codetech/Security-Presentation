@@ -1,7 +1,7 @@
 class: center, middle, bgblue
 #SSH and Networking
 
-**By Jonathan Jimenez**
+By **Jonathan Jimenez** andd **Matthew Hendricks**
 
 Slides are available on the codetech github
 ???
@@ -12,11 +12,13 @@ Slides are at `github.com/codetech` then click `ssh-networking-presentation` scr
 This presentation will lightly cover:
 - The shell and telnet
 - Public Key Cryptography
-- Somthing else
 
 And in detail
 - How to set up ssh to connect using a public key
-- Something else
+- Generating gpg keys
+- Signing messages and verifying them
+- Encrypting and Decrypting gpg messages
+- Using gpg the right way.
 ---
 
 class: center, middle
@@ -29,6 +31,17 @@ class: center, middle, inverse
 #RSA
 ---
 
+class: center, middle
+![something](img/0.png)
+???
+```
+  +-------+                                  +-------+
+  |       |                                  |       |
+  | Alice |                                  |  Bob  |
+  |       |                                  |       |
+  +-------+                                  +-------+
+```
+---
 class: center, middle
 ![something](img/1.png)
 ???
@@ -113,32 +126,6 @@ class: center, middle
   |  Secure System  |                  |  Secure System  |
   |                 |                  |                 |
   +-----------------+----+         +---+-----------------+
-  | +-------+            |         |           +-------+ |
-  | |       |            |         | +--------+|       | |
-  | | Alice |            |         | | Secret ||  Bob  | |
-  | |       |            |         | +--------+|       | |
-  | +-------+            |         |           +-------+ |
-  |                      |         |                     |
-  +----------------------+         +---------------------+
-```
----
-class: center, middle
-![something](img/7.png)
-???
-```
-  +-----------------+                  +-----------------+
-  |  Secure System  |                  |  Secure System  |
-  |                 |                  |                 |
-  +-----------------+----+         +---+-----------------+
-  | +-------+            |         |           +-------+ |
-  | |       |            |         | +--------+|       | |
-  | | Alice |            |         | | Secret ||  Bob  | |
-  | |       |            |         | +--------+|       | |
-  | +-------+            |         |           +-------+ |
-  |                      |         |                     |
-  +----------------------+         +---------------------+
-
-  +----------------------+         +---------------------+
   | +-------+            |         |           +-------+ |
   | |       |            |         | +--------+|       | |
   | | Alice |            |         | | Secret ||  Bob  | |
@@ -446,6 +433,12 @@ class: center, middle
 ---
 
 class: center, middle
+#How do we solve this then?
+--
+
+We use public key Cryptography
+---
+class: center, middle
 ![something](img/22.png)
 ???
 ```bash
@@ -569,7 +562,11 @@ class: center, middle
 ---
 #RSA
 
-- **Cryptosystem** - Other encryption methods are built on top of RSA
+- Developed in 1973 by Ron **R**ivest, Adi **S**hamir, and Leonard **A**dleman
+
+--
+
+- Based on difficulty of factoring large numbers
 
 --
 
@@ -577,11 +574,7 @@ class: center, middle
 
 --
 
-- Developed in 1973 by Ron **R**ivest, Adi **S**hamir, and Leonard **A**dleman
-
---
-
-- Based on difficulty of factoring large numbers
+- **Cryptosystem** - Other encryption methods are built on top of RSA
 
 --
 
@@ -647,11 +640,7 @@ Open CMD, or whatever shell you preffer
 ---
 #Telnet
 
-But what if I'm far away from my computer,
---
- in another country,
---
- all the way in another room!?
+What if you want to access your computer's shell remotely?
 
 --
 >Wikipedia:
@@ -881,7 +870,7 @@ We will use scp, specificly winscp, this should be installed already. Open it no
 #Logging In
 Now we can log into the server using our key
 ```bash
-  $ ssh coder1@codetech.jonjmz.com -i credential
+  $ ssh coder1@codetech.jonjmz.com -i credential.pub
 ```
 
 --
@@ -908,6 +897,65 @@ class: center, middle, inverse
 --
 
 .gray.small[Note: GNU stands for GNU Not Unix, think about that for a second.]
+---
+
+#Generating Our Keys
+```bash
+  $ gpg --gen-key
+```
+--
+```bash
+  lease select what kind of key you want:
+     (1) RSA and RSA (default)
+     (2) DSA and Elgamal
+     (3) DSA (sign only)
+     (4) RSA (sign only)
+  Your selection? 4
+```
+--
+```bash
+  RSA keys may be between 1024 and 4096 bits long.
+  What keysize do you want? (2048)
+  Requested keysize is 2048 bits
+  Please specify how long the key should be valid.
+           0 = key does not expire
+        <n>  = key expires in n days
+        <n>w = key expires in n weeks
+        <n>m = key expires in n months
+        <n>y = key expires in n years
+  Key is valid for? (0)
+  Key does not expire at all
+  Is this correct? (y/N) y
+```
+---
+```bash
+  We need to generate a lot of random bytes. It is a good idea to perform
+  some other action (type on the keyboard, move the mouse, utilize the
+  disks) during the prime generation; this gives the random number
+  generator a better chance to gain enough entropy.
+  gpg: key 34A329DD marked as ultimately trusted
+  public and secret key created and signed.
+
+  gpg: checking the trustdb
+  gpg: 3 marginal(s) needed, 1 complete(s) needed, PGP trust model
+  gpg: depth: 0  valid:   2  signed:   0  trust: 0-, 0q, 0n, 0m, 0f, 2u
+  pub   2048R/34A329DD 2015-10-06
+        Key fingerprint = E10C 2B62 BA00 1CF4 DB2F  F56C D6F3 CBDE 34A3 29DD
+  uid       [ultimate] Jonathan (comment) <jon@jon.com>
+
+  Note that this key cannot be used for encryption.  You may want to use
+  the command "--edit-key" to generate a subkey for this purpose.
+```
+--
+```bash
+  $ gpg --list-keys
+```
+--
+```bash
+  pub   2048R/583BCC7D 2015-10-06
+  uid       [ultimate] jonathan (comment) <jon@jon.com>
+  sub   2048R/6FEF9420 2015-10-06
+```
 ---
 
 #Signing Things
@@ -1080,6 +1128,49 @@ This would be ok if we were signing a large file, but it just doesn't make sense
 ```
 ---
 
+#Encrypting
+```bash
+  $ gpg --armor -r jon@jon.com -e file.txt
+```
+--
+```bash
+  -----BEGIN PGP MESSAGE-----
+  Comment: GPGTools - https://gpgtools.org
+
+  hQEMA6jhmEhv75QgAQf/dHFOTaSGRTqtrmuZC/3wa/ETmVm+jy9qYcBiREDV4Seu
+  MKEEgpT6h7KOdmPHclxOaggQoe8EHO6NRGhHBIG0tlrdCMalBm2KMLH5Khvp2EbW
+  TmWHIRu9sPEiSpLN5EKMIxwCadfFKlosW+Q2hv8BKTnv+v4H/UdDUywfrmOgg04s
+  UbgVKeJ9/BbCePXdAad6fQT9ZG/7g0SCCn/BnslGnQdrTWwViPWZKSWn+5P7cc9H
+  /OsXChIYs5KUzhmZKQ5m0hEp9wM9srmvLfdJw5IvDre+mC4Dze0GDxFvdLFwt4e/
+  VgAdhM4BHkrh2lvCv9CKadXpGOIHjcT+N/9krL/MT9JqAYOUT3u+v7xKTE/8+yLt
+  NMeCRfiTQf4vG2gIHu2WPI8e5oc/9KFb3SKCGaKPJKVlPmDhFeWD8g0k99+gsBPC
+  TkNFOCgpsrH1k0ao1tXl4cIycVRtwFJwt4NNIsGne1bTdX/Z6nHGCkgLUw==
+  =Id6W
+  -----END PGP MESSAGE-----
+```
+---
+
+#Decrypt
+
+note: we don't need to specify a key, gpg will try every key available to us.
+
+```bash
+  $ gpg -d file.txt
+```
+--
+```bash
+  You need a passphrase to unlock the secret key for
+  user: "jonathan (comment) <jon@jon.com>"
+  2048-bit RSA key, ID 6FEF9420, created 2015-10-06 (main key ID 583BCC7D)
+
+  gpg: encrypted with 2048-bit RSA key, ID 6FEF9420, created 2015-10-06
+        "jonathan (comment) <jon@jon.com>"
+  this is a secret file
+
+  you can't haz these
+```
+---
+
 #Uploading our keys
 
 We will use
@@ -1122,6 +1213,10 @@ Also has other tools related to logging into services.
 Alows you to decrypt and sign messages without your keys leaving the yubikey
 
 ![some](http://pcsclite.alioth.debian.org/ccid/img/yubikey_neo.png)
+---
+
+class: center, middle, bgblue
+#Making it Convinient
 
 
 
